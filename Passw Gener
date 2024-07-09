@@ -1,0 +1,13 @@
+import random
+import string
+# Prompt the user for the desired password length
+try:
+    desired_length = int(input("Enter the desired password length: "))
+    if desired_length <= 0:
+        print("Please enter a positive integer for the password length.")
+    else:
+        characters = string.ascii_letters + string.digits + string.punctuation
+        password = ''.join(random.choice(characters) for _ in range(desired_length))
+        print(f"Generated password: {password}")
+except ValueError:
+    print("Invalid input. Please enter a valid positive integer.")
