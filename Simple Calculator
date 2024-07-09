@@ -1,0 +1,35 @@
+def main():
+    while True:
+        try:
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            operation = input("Choose operation (1. Add, 2. Subtract, 3. Multiply, 4. Divide): ")
+
+            if operation not in ["1", "2", "3", "4"]:
+                print("Invalid operation. Please choose a valid option.")
+                continue
+
+            if operation == "1":
+                operation = "+"
+                result = num1 + num2
+            elif operation == "2":
+                operation = "-"
+                result = num1 - num2
+            elif operation == "3":
+                operation = "*"
+                result = num1 * num2
+            else:
+                if num2 != 0:
+                    operation = "/"
+                    result = num1 / num2
+                else:
+                    print("Error: Cannot divide by zero!")
+                    continue
+
+            print(f"{num1} {operation} {num2} = {result}")
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+if __name__ == "__main__":
+    main()
